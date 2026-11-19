@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>מעיין זקן · מיתוג ועיצוב</title>
+<meta name="description" content="מעיין זקן, מעצבת גרפית. מיתוג ועיצוב לעסקים עצמאיים ומשפחתיים: לוגו וזהות, אריזות ואתרים, מתוך השיחה והסיפור שמאחורי העסק.">
+<meta property="og:title" content="מעיין זקן · מיתוג ועיצוב">
+<meta property="og:description" content="לפני שאני מעצבת, אני מתאהבת בסיפור.">
+<meta property="og:image" content="/images/web/hero.jpg">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "/vendor/react.production.min.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "/vendor/react-dom.production.min.js"};</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ddd2c1"/><g fill="none" stroke="#ab9179" stroke-width="2"><circle cx="100" cy="100" r="18"/><circle cx="100" cy="100" r="32"/><circle cx="100" cy="100" r="45"/><circle cx="100" cy="100" r="56"/></g><text x="100" y="108" text-anchor="middle" font-family="serif" font-size="26" fill="#473227">מ</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'TreeOfKnowledge';src:url('fonts/FbTreeOfKnowledge-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'TreeOfKnowledge';src:url('fonts/FbTreeOfKnowledge-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Naama';src:url('fonts/FbNaama-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Naama';src:url('fonts/FbNaama-Bold.otf') format('opentype');font-weight:700;font-display:swap}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f0efec;color:#473227;font-family:'Naama',system-ui,sans-serif}
+a{color:#473227;text-decoration:none}
+a:hover{color:#8a6f57}
+::selection{background:#ddd2c1}
+.who-row{display:flex;justify-content:space-between;align-items:flex-start;gap:37px}
+.who-text{flex:1 1 0;min-width:0;max-width:555px}
+.who-list{flex:1 1 0;min-width:0;max-width:544px}
+@media (max-width:760px){.who-row{flex-direction:column;gap:40px}.who-text,.who-list{max-width:none;width:100%}}
+.budget-select:has(option[value='']:checked){color:#8a6f57 !important;font-size:14px !important}
+.contact-row{display:flex;justify-content:space-between;align-items:flex-start;gap:48px}
+.contact-text{flex:1 1 0;min-width:0;max-width:426px}
+.contact-form{flex:1 1 0;min-width:0;max-width:543px}
+@media (max-width:760px){.contact-row{flex-direction:column;align-items:stretch;gap:40px}.contact-text,.contact-form{max-width:none;width:100%}}
+.about-row{display:flex;justify-content:space-between;align-items:center;gap:54px}
+.about-img{flex:1 1 0;min-width:0;max-width:538px}
+.about-text{flex:1 1 0;min-width:0;max-width:521px}
+@media (max-width:760px){.about-row{flex-direction:column;align-items:stretch;gap:40px}.about-img,.about-text{max-width:none;width:100%}}
+</style>
+</helmet>
+<div dir="rtl" style="background:#f0efec;font-family:'Naama',system-ui,sans-serif;color:#473227;text-wrap:pretty;overflow-x:clip">
+
+  <header style="position:sticky;top:0;z-index:40;background:rgba(240,239,236,0.94);backdrop-filter:blur(10px)">
+    <div style="max-width:1280px;margin:0 auto;padding:12px clamp(18px,5.5vw,71px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 32px">
+      <a href="#top" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;cursor:pointer">
+        <img src="images/logo.svg" alt="מעיין זקן" width="98" height="48" style="display:block;width:98px;height:48px" />
+        <span style="font-size:14px;line-height:1;color:#ab9179;padding-top:6px">מיתוג ועיצוב</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;gap:12px 21px;font-size:14px;line-height:1">
+        <a href="#works" onClick="{{ goHome }}">עבודות</a>
+        <a href="#who" onClick="{{ goHome }}">עם מי אני עובדת</a>
+        <a href="#how" onClick="{{ goHome }}">במה אני הכי טובה</a>
+        <a href="#about" onClick="{{ goHome }}">עלי</a>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:34px;border:1px solid #473227;padding:0 16px;margin-inline-start:5px;font-size:14px" style-hover="background:#473227;color:#f0efec">שניפגש לקפה? <span aria-hidden="true" style="color:#ab9179">←</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main id="top" style="position:relative;z-index:0">
+
+    <section style="position:relative;padding:0 0 100px">
+      <img src="images/web/hero.jpg" alt="מעיין יושבת בכורסה בסלון מואר באור בוקר, עם כוס קפה ומחשב נייד על השולחן" width="1584" height="672" style="display:block;width:100%;height:auto;aspect-ratio:1280/543;min-height:340px;object-fit:cover;object-position:20% 50%" />
+      <div style="max-width:1280px;margin:0 auto;padding:0 clamp(18px,5.3vw,68px);position:relative;box-sizing:border-box">
+        <div style="margin-top:clamp(-148px,-11.5vw,-48px);background:#f0efec;padding:clamp(28px,3vw,38px) clamp(22px,3.8vw,49px) 4px clamp(22px,2.8vw,36px);max-width:646px;box-sizing:border-box;position:relative">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:19px">
+            <span aria-hidden="true" style="width:11px;height:11px;box-sizing:border-box;border:1px solid #a08869;border-radius:50%;display:block"></span>
+            <span style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869">מיתוג ועיצוב לעסקים</span>
+          </div>
+          <h1 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(38px,4.45vw,57px);line-height:1;margin:0 0 36px">לפני שאני מעצבת,<br />אני מתאהבת בסיפור.</h1>
+          <p style="font-weight:700;font-size:17px;line-height:29px;max-width:559px;margin:0 0 40px;color:#473227">אני מעיין, אני בונה מיתוג לעסקים, ואני מתחילה תמיד מהאנשים שמאחוריהם.<br />בשיחה נעימה, על כוס קפה, מדברים על מה שלא נכתב בבריף. משם נבנה העולם.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:25px">
+            <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;box-sizing:border-box;height:47px;background:#473227;color:#f0efec;padding:0 27px 0 35px;font-size:13px;letter-spacing:0.05em" style-hover="background:#33241c">בואו נשתה קפה <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
+            <a href="#works" style="font-size:13px;letter-spacing:0.05em;border-bottom:1px solid #ab9179;padding-bottom:5px" style-hover="border-color:#473227">לראות עבודות</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;background:#f0efec">
+      <div style="box-sizing:content-box;max-width:800px;margin:0 auto;padding:clamp(56px,10vw,130px) clamp(18px,4vw,44px) clamp(56px,6.5vw,84px);text-align:center">
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(24px,2.35vw,30px);line-height:1.2;margin:0 0 25px;color:#473227;text-align:center;text-wrap:balance">אני בחורה רגישה. פעם חשבתי שזו חולשה, היום זה כלי העבודה המרכזי שלי.</h2>
+        <p style="font-weight:700;font-size:17px;line-height:29px;color:#473227;margin:0 auto;max-width:525px;text-align:center;text-wrap:balance">אני שומעת גם מה שלא נאמר בקול - את ההתלבטות, את הגאווה, את הפחד לקחת מקום. כשאני מתחברת לאדם שיושב מולי, נבנים העולמות הכי יפים שיצרתי. זה הבידול שלי, והוא מספיק.</p>
+      </div>
+    </section>
+
+    <section id="who" style="position:relative;background:#ddd2c1 url('images/web/who-texture.jpg') center/cover no-repeat">
+      <div style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:80px clamp(18px,5.7vw,73px) 73px clamp(18px,5.5vw,71px)" class="who-row">
+        <div class="who-text">
+          <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:20px">עם מי אני עובדת</div>
+          <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(30px,2.75vw,35px);line-height:1;margin:0 0 28px;color:#473227">עסקים שיש מאחוריהם<br />מישהו שאכפת לו.</h2>
+          <p style="font-weight:700;font-size:17px;line-height:29px;color:#473227;margin:0">עצמאיים ומשפחתיים, כאלה שהעסק שלהם הוא גם הבית שלהם. לא חייבים לדעת להסביר מה מיוחד בהם - זה החלק שלי. בסוף, מה שמחבר אותי לעסק הוא הסיפור, לא התחום.</p>
+        </div>
+        <ul class="who-list" style="list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));row-gap:32px;min-height:185px;color:#473227">
+          <li style="display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:4px 16px 8px;padding-inline-start:0;">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:21px;line-height:1.15;white-space:nowrap">חקלאות</span>
+            <span style="font-size:12px;line-height:1.45;letter-spacing:0.02em;color:#6b5240;white-space:nowrap">מטעים, משקים<br />ועובדי אדמה</span>
+          </li>
+          <li style="display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:4px 16px 8px;border-inline-start:1px solid #b9a68c;">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:21px;line-height:1.15;white-space:nowrap">מזון ויין</span>
+            <span style="font-size:12px;line-height:1.45;letter-spacing:0.02em;color:#6b5240;white-space:nowrap">יקבים, מאפיות<br />ומטבחים קטנים</span>
+          </li>
+          <li style="display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:4px 16px 8px;border-inline-start:1px solid #b9a68c;">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:21px;line-height:1.15;white-space:nowrap">מלאכת יד</span>
+            <span style="font-size:12px;line-height:1.45;letter-spacing:0.02em;color:#6b5240;white-space:nowrap">קרמיקה, תכשיטים<br />וסטודיו ביתי</span>
+          </li>
+          <li style="display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:4px 16px 8px;border-inline-start:1px solid #b9a68c;">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:21px;line-height:1.15;white-space:nowrap">לייף סטייל</span>
+            <span style="font-size:12px;line-height:1.45;letter-spacing:0.02em;color:#6b5240;white-space:nowrap">נרות, תכשיטים<br />ומוצרי בית</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="works" style="padding:clamp(72px,8.5vw,109px) 0 22px">
+      <div style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:0 clamp(18px,5.7vw,73px) 0 clamp(18px,5.5vw,71px)">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px 32px;margin-bottom:12px">
+          <div>
+            <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:19px">עבודות נבחרות</div>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(30px,2.75vw,35px);line-height:1.05;margin:0;max-width:334px">כל אחד מהם התחיל בשיחה.</h2>
+          </div>
+          <span style="font-size:12px;line-height:1;color:#a08869">לחצו לצפייה בפרויקט</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px 36px">
+          <a onClick="{{ openAvira }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+            <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
+              <img src="images/web/avira-1.jpg" alt="נר אווירה על שולחן עץ" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" />
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:13px">
+              <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">אווירה</span>
+              <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - לייף סטייל</span>
+            </div>
+          </a>
+          <a onClick="{{ openHavaya }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+            <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
+              <img src="images/web/havaya-1.jpg" alt="תליון מנדלה מוזהב של חוויה על שולחן עץ" style="width:100%;height:100%;object-fit:cover;object-position:47% 50%;display:block" />
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:13px">
+              <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">חוויה</span>
+              <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - לייף סטייל</span>
+            </div>
+          </a>
+          <a onClick="{{ openTamranim }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+            <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
+              <img src="images/web/tamranim-1.jpg" alt="שדרת עצי תמר בבקעת הירדן באור שקיעה" style="width:100%;height:100%;object-fit:cover;object-position:50% 75%;display:block" />
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:13px">
+              <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">התמרנים</span>
+              <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - חקלאות</span>
+            </div>
+          </a>
+        </div>
+        <div aria-hidden="true" style="position:relative;height:0">
+          <img src="images/rings-bg.svg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100vw;max-width:none;height:1752px;object-fit:cover;object-position:center top;z-index:-1;pointer-events:none" />
+        </div>
+      </div>
+    </section>
+
+    <section id="how" style="padding:clamp(72px,9vw,120px) 0">
+      <div style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:0 clamp(18px,5.7vw,73px) 0 clamp(18px,5.5vw,71px)">
+        <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:19px">במה אני הכי טובה</div>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(30px,2.75vw,35px);line-height:1.05;margin:0 0 22px">שלושה דברים שאני עושה הכי טוב</h2>
+        <p style="font-weight:700;font-size:17px;line-height:29px;margin:0 0 48px;max-width:560px">אני מתחילה מהסיפור, אבל מה שהלקוחות פוגשים בסוף הוא משהו שאפשר לראות ולהחזיק.</p>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;color:#473227">
+          <li style="background:#f0efec;border:1px solid #ddd2c1;display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0">
+            <div style="padding:20px 20px 0">
+              <div style="aspect-ratio:16/10;overflow:hidden;background:#ddd2c1">
+                <img src="images/web/tamranim-4.jpg" alt="קופסאות תמרים של התמרנים על מגש עץ" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" />
+              </div>
+            </div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:26px;line-height:1.15;margin:0;padding:24px 28px 0">אריזה שמספרת מי אתם.</h3>
+            <p style="font-weight:700;font-size:14px;line-height:25px;margin:0;padding:14px 28px 0">תוויות, קופסאות ושקיות שנראות טוב על המדף ובתמונה. מהסקיצה ועד קובץ מוכן לדפוס.</p>
+            <p style="font-size:13px;line-height:1.5;color:#6b5240;margin:0;padding:18px 28px 0">לדוגמה: <a href="#top" onClick="{{ openTamranim }}" style="color:#473227;border-bottom:1px solid #ab9179;padding-bottom:1px" style-hover="border-color:#473227">התמרנים</a>, <a href="#top" onClick="{{ openAvira }}" style="color:#473227;border-bottom:1px solid #ab9179;padding-bottom:1px" style-hover="border-color:#473227">אווירה</a>.</p>
+            <div style="margin:22px 28px 28px;padding-top:14px;border-top:1px solid #ddd2c1;font-size:12px;letter-spacing:0.08em;color:#6b5240;align-self:end">בערך שבוע עבודה</div>
+          </li>
+          <li style="background:#f0efec;border:1px solid #ddd2c1;display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0">
+            <div style="padding:20px 20px 0">
+              <div style="aspect-ratio:16/10;overflow:hidden;background:#ddd2c1">
+                <img src="images/web/tamranim-3.jpg" alt="אתר התמרנים על מסך מחשב נייד" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" />
+              </div>
+            </div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:26px;line-height:1.15;margin:0;padding:24px 28px 0">אתר שנראה כמו העסק שלכם.</h3>
+            <p style="font-weight:700;font-size:14px;line-height:25px;margin:0;padding:14px 28px 0">אתר תדמית נקי, ברור ונוח בנייד, בעיצוב שמתאים לעולם של העסק ולא לתבנית מוכנה.</p>
+            <p style="font-size:13px;line-height:1.5;color:#6b5240;margin:0;padding:18px 28px 0">לדוגמה: <a href="#top" onClick="{{ openTamranim }}" style="color:#473227;border-bottom:1px solid #ab9179;padding-bottom:1px" style-hover="border-color:#473227">התמרנים</a>, [שם האתר השני].</p>
+            <div style="margin:22px 28px 28px;padding-top:14px;border-top:1px solid #ddd2c1;font-size:12px;letter-spacing:0.08em;color:#6b5240;align-self:end">בערך 4 שבועות עבודה</div>
+          </li>
+          <li style="background:#f0efec;border:1px solid #ddd2c1;display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0">
+            <div style="padding:20px 20px 0">
+              <div style="aspect-ratio:16/10;overflow:hidden;background:#ddd2c1">
+                <img src="images/web/havaya-cards.jpg" alt="כרטיס ביקור של חוויה עם הלוגו, על בד פשתן" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" />
+              </div>
+            </div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:26px;line-height:1.15;margin:0;padding:24px 28px 0">לוגו וזהות שנולדים משיחה.</h3>
+            <p style="font-weight:700;font-size:14px;line-height:25px;margin:0;padding:14px 28px 0">אנחנו מדברים, אני מקשיבה, ומזה נבנית שפה אחת לכל נקודת מגע.</p>
+            <p style="font-size:13px;line-height:1.5;color:#6b5240;margin:0;padding:18px 28px 0">לדוגמה: <a href="#top" onClick="{{ openHavaya }}" style="color:#473227;border-bottom:1px solid #ab9179;padding-bottom:1px" style-hover="border-color:#473227">חוויה</a>, <a href="#top" onClick="{{ openAvira }}" style="color:#473227;border-bottom:1px solid #ab9179;padding-bottom:1px" style-hover="border-color:#473227">אווירה</a>.</p>
+            <div style="margin:22px 28px 28px;padding-top:14px;border-top:1px solid #ddd2c1;font-size:12px;letter-spacing:0.08em;color:#6b5240;align-self:end">מ-3 שבועות, תלוי בהיקף</div>
+          </li>
+        </ul>
+        <div style="text-align:center;margin-top:40px">
+        <p style="font-size:14px;line-height:1.7;color:#6b5240;margin:0 auto;max-width:640px">מתחילים בשאלון קצר ושיחה, ומשם זה זז מהר. כל מסלול כולל משוב ברור ומספר סבבי תיקונים מוגדר.</p>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;box-sizing:border-box;height:47px;margin-top:22px;background:#473227;color:#f0efec;padding:0 27px 0 35px;font-size:13px;letter-spacing:0.05em" style-hover="background:#33241c">נשמע מעניין? בואו נדבר <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+    <section style="background:#473227;color:#f0efec">
+      <div style="max-width:1000px;margin:0 auto;padding:75px clamp(18px,4vw,44px) 83px;text-align:center">
+        <p aria-live="polite" style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(26px,2.5vw,32px);line-height:1.4;max-width:820px;min-height:90px;display:flex;align-items:center;justify-content:center;margin:0 auto 21px;text-wrap:balance"><span><span aria-hidden="true" style="font-weight:300;font-size:2.1em;line-height:0;color:#ab9179;vertical-align:-0.22em;margin-inline:0 0.2em">״</span>{{ quote.text }}<span aria-hidden="true" style="font-weight:300;font-size:2.1em;line-height:0;color:#ab9179;vertical-align:-0.22em;margin-inline:0.2em 0">״</span></span></p>
+        <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869">{{ quote.who }}</div>
+        <sc-if value="{{ hasManyQuotes }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;justify-content:center;gap:4px;margin-top:33px">
+          <sc-for list="{{ quoteDots }}" as="dot" hint-placeholder-count="3">
+            <button type="button" onClick="{{ dot.pick }}" aria-label="{{ dot.label }}" aria-pressed="{{ dot.active }}" style="background:none;border:0;padding:6px;margin:0;cursor:pointer;display:block">
+              <span style="{{ dot.style }}"></span>
+            </button>
+          </sc-for>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+    </sc-if>
+
+    <section id="about" style="padding:105px 0 110px">
+      <div style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:0 clamp(18px,5.9vw,75px) 0 clamp(18px,7.2vw,92px)" class="about-row">
+        <div class="about-img">
+          <img src="images/web/maayan-portrait.jpg" alt="מעיין זקן בסוודר בהיר, מחייכת באור חם בבית" width="1076" height="1428" style="display:block;width:100%;height:auto;aspect-ratio:538/714;object-fit:cover" />
+          <div style="height:1px;background:#ddd2c1;margin-top:17px"></div>
+        </div>
+        <div class="about-text">
+          <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:19px">עלי</div>
+          <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(28px,2.5vw,32px);line-height:37px;margin:0 0 27px">אני עובדת מהבית,<br />ואני לא מתנצלת על זה</h2>
+          <p style="font-weight:700;font-size:15px;line-height:25px;margin:0 0 25px">הסלון שלי הוא הסטודיו. יש בו שולחן גדול, יותר מדי כוסות קפה, ושקט, וזה בדיוק מה שמאפשר לי להיות בפרטים ולא למסור עבודה שנראית כמו של כולם.</p>
+          <p style="font-weight:700;font-size:15px;line-height:25px;margin:0 0 25px">למדתי עיצוב גרפי וגיליתי שהיתרון שלי הוא לא רק בקובץ, אלא בשיחה שלפניו, כי כשאני מבינה את העסק, הקובץ יוצא מדויק כבר בפעם הראשונה. אני נכנסת לעסק של מישהו כמו שנכנסים לבית: בשקט, בסקרנות, בלי לשנות את הרהיטים לפני שהבנתי למה הם שם.</p>
+          <p style="font-weight:700;font-size:15px;line-height:25px;margin:0 0 47px">ואם תשאלו אותי איפה הלב שלי? הוא בשדות, אצל אנשים שקמים מוקדם ועובדים עם האדמה, ושלרוב אין להם מי שיספר את הסיפור המדהים שלהם. ואני אוהבת לעבוד עם כל מי שיש לו סיפור שמגיע לספר.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <span style="display:inline-flex;align-items:center;box-sizing:border-box;height:33px;border:1px solid #ddd2c1;padding:0 16px;font-size:13px;line-height:25px">רגישה</span>
+            <span style="display:inline-flex;align-items:center;box-sizing:border-box;height:33px;border:1px solid #ddd2c1;padding:0 16px;font-size:13px;line-height:25px">מדויקת</span>
+            <span style="display:inline-flex;align-items:center;box-sizing:border-box;height:33px;border:1px solid #ddd2c1;padding:0 16px;font-size:13px;line-height:25px">חברית</span>
+            <span style="display:inline-flex;align-items:center;box-sizing:border-box;height:33px;border:1px solid #ddd2c1;padding:0 16px;font-size:13px;line-height:25px">לא נעלמת</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+    <section style="background:#ddd2c1 url('images/web/pricing-texture.jpg') center/cover no-repeat">
+      <div style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:78px clamp(18px,5.8vw,74px) 111px clamp(18px,7.2vw,92px)">
+        <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:20px">מה אפשר לעשות יחד</div>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(28px,2.5vw,32px);line-height:37px;margin:0 0 47px">אפשר להתחיל בקטן</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:15px;color:#473227">
+          <li style="background:#f0efec;border:1px solid transparent;box-sizing:border-box;min-height:218px;padding:33px 31px 30px;display:flex;flex-direction:column">
+            <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:10px">א׳</div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:25px;line-height:37px;margin:0 0 12px">פריט בודד</h3>
+            <p style="font-weight:700;font-size:15px;line-height:25px;margin:0">אריזה, הזמנה, שילוט או קטלוג קטן<br />לעסק שכבר יש לו שפה ורק צריך עוד חלק קטן</p>
+            <div style="margin-top:auto;padding-top:22px"><div style="border-top:1px solid #ddd2c1;padding-top:14px;font-size:12px;letter-spacing:0.08em;color:#6b5240">מחיר קבוע שמוסכם מראש</div></div>
+          </li>
+          <li style="background:#f0efec;border:1px solid #ab9179;box-sizing:border-box;min-height:218px;padding:33px 31px 30px;display:flex;flex-direction:column">
+            <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:10px">ב׳ - מומלץ</div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:25px;line-height:37px;margin:0 0 12px">מיתוג מלא</h3>
+            <p style="font-weight:700;font-size:15px;line-height:25px;margin:0">מהשיחה ועד זהות מלאה<br />לוגו, פלטה, אותיות, אריזה, מודפסים ותבניות לרשתות</p>
+            <div style="margin-top:auto;padding-top:22px"><div style="border-top:1px solid #ddd2c1;padding-top:14px;font-size:12px;letter-spacing:0.08em;color:#6b5240">מחיר קבוע שמוסכם מראש</div></div>
+          </li>
+          <li style="background:#f0efec;border:1px solid transparent;box-sizing:border-box;min-height:218px;padding:33px 31px 30px;display:flex;flex-direction:column">
+            <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:10px">ג׳</div>
+            <h3 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:25px;line-height:37px;margin:0 0 12px">מיתוג מחדש וליווי</h3>
+            <p style="font-weight:700;font-size:15px;line-height:25px;margin:0">לעסק שגדל והשפה שלו נשארה מאחור. חידוש הזהות, ואחריו ליווי לאורך הדרך: עוד שלט, עוד אריזה, עוד פוסט. אני נשארת.</p>
+            <div style="margin-top:auto;padding-top:22px"><div style="border-top:1px solid #ddd2c1;padding-top:14px;font-size:12px;letter-spacing:0.08em;color:#6b5240">מחיר קבוע שמוסכם מראש</div></div>
+          </li>
+        </ul>
+        <div style="text-align:center;margin-top:40px">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;box-sizing:border-box;min-height:47px;background:#473227;color:#f0efec;padding:12px 27px 12px 35px;font-size:13px;letter-spacing:0.05em" style-hover="background:#33241c">לא בטוחה מה מתאים? קבלי הצעת מחיר תוך 3 ימי עסקים <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <section id="contact" style="position:relative;background:#f0efec">
+      <div class="contact-row" style="max-width:1280px;margin:0 auto;box-sizing:border-box;padding:81px clamp(18px,5.8vw,74px) 100px clamp(18px,5.5vw,71px)">
+        <div class="contact-text">
+          <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:25px">יצירת קשר</div>
+          <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(32px,3vw,38px);line-height:1;margin:0 0 31px">ספרו לי על העסק שלכם<br />אני מקשיבה טוב</h2>
+          <p style="font-weight:700;font-size:15px;line-height:25px;margin:0 0 39px">אין צורך להגיע מסודרים. כתבו בשורה או שתיים מה אתם עושים ומה מרגיש לא נכון כרגע, ואחזור אליכם לשיחה של רבע שעה בלי התחייבות.</p>
+          <div style="display:flex;flex-direction:column;font-weight:700;font-size:15px;line-height:25px">
+            <a href="tel:+972509009610" style="color:#473227;text-decoration:none;direction:ltr;align-self:flex-start" style-hover="color:#8a6f57">050-9009610</a>
+            <a href="mailto:maayanzaken51@gmail.com" style="color:#473227;text-decoration:none;align-self:flex-start" style-hover="color:#8a6f57">maayanzaken51@gmail.com</a>
+            <span style="margin-top:8px">אינסטגרם: <a href="https://instagram.com/maayanzaken" target="_blank" rel="noopener" style="color:#473227;text-decoration:none" style-hover="color:#8a6f57">@maayanzaken</a></span>
+          </div>
+        </div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit="{{ onSubmit }}" style="background:#473227;box-sizing:border-box;padding:33px 30px 35px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>לא למלא <input name="bot-field" /></label></p>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1;color:#a08869">שם
+            <input type="text" name="name" autocomplete="name" style="background:transparent;border:none;border-bottom:1px solid #ab9179;border-radius:0;color:#f0efec;font-family:'Naama',sans-serif;font-size:16px;padding:10px 0;outline:none;width:100%;box-sizing:border-box" />
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1;color:#a08869">טלפון
+            <input type="tel" name="phone" autocomplete="tel" style="background:transparent;border:none;border-bottom:1px solid #ab9179;border-radius:0;color:#f0efec;font-family:'Naama',sans-serif;font-size:16px;padding:10px 0;outline:none;width:100%;box-sizing:border-box" />
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1;color:#a08869;grid-column:1 / -1">במה את/ה עוסק/ת
+            <input type="text" name="business" style="background:transparent;border:none;border-bottom:1px solid #ab9179;border-radius:0;color:#f0efec;font-family:'Naama',sans-serif;font-size:16px;padding:10px 0;outline:none;width:100%;box-sizing:border-box" />
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1;color:#a08869;grid-column:1 / -1">מה מרגיש לא נכון כרגע?
+            <textarea rows="2" name="message" style="background:transparent;border:none;border-bottom:1px solid #ab9179;border-radius:0;color:#f0efec;font-family:'Naama',sans-serif;font-size:16px;padding:10px 0;outline:none;width:100%;box-sizing:border-box;resize:none"></textarea>
+          </label>
+          <fieldset style="border:0;margin:0;padding:0;min-width:0;grid-column:1 / -1">
+            <legend style="font-size:12px;line-height:1;color:#a08869;padding:0;margin-bottom:12px">מה צריך?</legend>
+            <div style="display:flex;flex-wrap:wrap;gap:12px 22px;padding-bottom:14px;border-bottom:1px solid #ab9179">
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="checkbox" name="need" value="אריזה" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />אריזה</label>
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="checkbox" name="need" value="אתר" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />אתר</label>
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="checkbox" name="need" value="לוגו ומיתוג" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />לוגו ומיתוג</label>
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="checkbox" name="need" value="אחר" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />אחר</label>
+            </div>
+          </fieldset>
+          <fieldset style="border:0;margin:0;padding:0;min-width:0;grid-column:1 / -1">
+            <legend style="font-size:12px;line-height:1;color:#a08869;padding:0;margin-bottom:12px">מתי צריך?</legend>
+            <div style="display:flex;flex-wrap:wrap;gap:12px 22px;padding-bottom:14px;border-bottom:1px solid #ab9179">
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="radio" name="when" value="בהקדם" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />בהקדם</label>
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="radio" name="when" value="תוך חודש" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />תוך חודש</label>
+              <label style="display:inline-flex;align-items:center;gap:7px;font-size:14px;line-height:1.3;color:#f0efec;cursor:pointer"><input type="radio" name="when" value="אין לחץ" style="accent-color:#ab9179;width:15px;height:15px;margin:0;cursor:pointer" />אין לחץ</label>
+            </div>
+          </fieldset>
+          <div style="grid-column:1 / -1">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1;color:#a08869">מה הטווח שמרגיש לך נכון? (לא מחייב)
+              <span style="position:relative;display:block">
+                <select class="budget-select" name="budget" style="appearance:none;-webkit-appearance:none;background:transparent;border:none;border-bottom:1px solid #ab9179;border-radius:0;color:#f0efec;font-family:'Naama',sans-serif;font-size:16px;padding:10px 0;outline:none;width:100%;box-sizing:border-box;padding-left:24px;cursor:pointer">
+                  <option value="" style="background:#473227;color:#c7b49c">בחירה</option>
+                  <option style="background:#473227;color:#f0efec">עד 1,500 ₪</option>
+                  <option style="background:#473227;color:#f0efec">1,500–4,000 ₪</option>
+                  <option style="background:#473227;color:#f0efec">4,000–10,000 ₪</option>
+                  <option style="background:#473227;color:#f0efec">מעל 10,000 ₪</option>
+                  <option style="background:#473227;color:#f0efec">עוד לא יודע/ת, אשמח להצעה</option>
+                </select>
+                <span aria-hidden="true" style="position:absolute;left:2px;top:50%;transform:translateY(-50%);color:#8a6f57;font-size:9px;pointer-events:none">▾</span>
+              </span>
+            </label>
+            <p style="font-size:12px;line-height:1.5;color:#a08869;margin:10px 0 0">משמש רק כדי שאכין הצעה שמתאימה לך.</p>
+          </div>
+          <button type="submit" style="grid-column:1 / -1;justify-self:start;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:119px;height:47px;margin-top:2px;background:#ddd2c1;color:#473227;border:none;font-family:'Naama',sans-serif;font-size:13px;letter-spacing:0.05em;cursor:pointer" style-hover="background:#f0efec">שליחה <span aria-hidden="true">←</span></button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <span style="grid-column:1 / -1;font-size:14px;color:#c7b49c">{{ formMsg }}</span>
+          </sc-if>
+        </form>
+      </div>
+    </section>
+
+    <sc-if value="{{ showJobsBlock }}" hint-placeholder-val="{{ true }}">
+    <section style="border-top:1px solid #ddd2c1">
+      <div style="max-width:1280px;margin:0 auto;padding:52px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px">
+        <div>
+          <div style="font-family:'TreeOfKnowledge',serif;font-size:25px;margin-bottom:8px">מחפשים מעצבת לצוות?</div>
+          <div style="font-size:15px;color:#6b5240">קורות חיים ותיק עבודות בקובץ אחד.</div>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:11px;border:1px solid #473227;padding:15px 26px;font-size:14px;letter-spacing:1.2px" style-hover="background:#473227;color:#f0efec">להורדה <span style="color:#a08869">←</span></a>
+      </div>
+    </section>
+    </sc-if>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAvira }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="max-width:1280px;margin:0 auto;padding:48px clamp(18px,4vw,44px) 0">
+      <a onClick="{{ goHome }}" style="cursor:pointer;font-size:14px;color:#7c6650">← חזרה לעבודות</a>
+      <div style="font-size:11px;letter-spacing:3px;color:#a08869;margin:34px 0 18px">מיתוג · נרות ריחניים</div>
+      <h1 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(38px,5vw,76px);line-height:1.02;margin:0">עודד חייק — אווירה</h1>
+      <p style="font-size:20px;line-height:1.8;color:#5a4234;max-width:31em;margin:26px 0 0">מוצר אחד שהפך למותג, ולקוח אחד שנשאר איתי כבר ארבע שנים.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:18px 44px;margin:40px 0 0;padding:24px 0;border-top:1px solid #ddd2c1;border-bottom:1px solid #ddd2c1;font-size:15px;color:#6b5240">
+        <span>עודד חייק</span>
+        <span>נרות · מפיצי ריח · אריזות</span>
+        <span>עבודה מתמשכת</span>
+        <span>לוגו · תוויות · אריזות · רשתות</span>
+      </div>
+    </section>
+
+    <section style="padding:44px 0 0">
+      <img src="images/web/avira-1.jpg" alt="נר AVIRA Peach &amp; Honey על שולחן עץ מול חלון" style="width:100%;height:min(62vh,620px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">עודד פנה אליי עם מוצר קונקרטי אבל שאפתני: נר ריחני בצנצנת, שהוא רוצה להפוך למותג בשם "אווירה". הבריף הרשמי דיבר בשפה עסקית ברורה — יעדי מכירות מדורגים, קהל יעד בגילאי 16–50 (בעיקר נשים), אסטרטגיית שיווק ברשתות חברתיות. אבל כבר בשיחה הראשונה היה ברור שהמוצר הזה לא נועד רק להימכר — הוא נועד ליצור הרגשה.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">מתחת לכל השפה העסקית — ניתוח מתחרים, יעדי רווח, פילוח קהלים — הייתה שורה אחת שבאמת כיוונה הכל: "אין יותר אלגנטי מהטבע". עודד רצה שהלוגו ישדר תחכום, עוצמה וסקס אפיל, אבל גם ובעיקר — תחושה טבעית. לצד זה עמדה תובנה נוספת: המוצר עצמו עתיק (נר הוא כלי בן 5,000 שנה), אבל הוא רצה שהמיתוג ירגיש רענן ומודרני, לא מונוכרומטי כמו החברות הגדולות בשוק. הניגוד הזה — בין עתיק לרענן, בין טבעי לתחכום — הוא מה שבאמת כיוון את הפרויקט, לא רשימת התכונות הרשמית.</p>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,5vw,72px) 0 0">
+      <img src="images/web/avira-2.jpg" alt="נר AVIRA רוגע עם תווית שחורה" style="width:100%;height:min(58vh,560px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%);width:980px;height:980px;pointer-events:none;opacity:0.5">
+        <div style="position:absolute;inset:0;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:100px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:200px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:290px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:370px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:440px;border:1px solid #ddd2c1;border-radius:50%"></div>
+      </div>
+      <div style="position:relative;max-width:820px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px);text-align:center">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(30px,3.6vw,54px);line-height:1.28;margin:0">״אין יותר אלגנטי מהטבע.״</p>
+        <div style="font-size:13px;letter-spacing:2px;color:#a08869;margin-top:26px">השורה שכיוונה את כל הפרויקט</div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,44px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">03</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">הרגע שבו התחברתי</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">את עודד הכרתי דרך חברה משותפת, בתקופה שהייתי עוד סטודנטית לעיצוב גרפי. לעודד כבר היו אז מוצרים ומדבקות על הצנצנות, אבל הגרפיקה שלהן הייתה חובבנית לגמרי — וכשראיתי אותן, לא יכולתי שלא להציע לעצב אותן מחדש, ללא תשלום, כצעד ראשון בהתפתחות שלי כמעצבת. הרגשתי שאני יודעת לעשות את זה טוב יותר, ורציתי הזדמנות להוכיח את זה גם לעצמי, ולבנות ניסיון וביטחון עצמי. עודד העריך את המחווה הזו כל כך, שמאז אנחנו עובדים ביחד באופן קבוע כבר ארבע שנים.</p>
+        </div>
+        <div>
+          <img src="images/web/avira-3.jpg" alt="מפיץ ריח AVIRA Heaven's Rain על שידה" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" />
+          <div style="height:3px;margin-top:14px;background:repeating-linear-gradient(90deg,#ddd2c1 0 9px,transparent 9px 14px,#e4dccf 14px 26px,transparent 26px 33px)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/avira-4.jpg" alt="אריזת מתנה של AVIRA בהדפס פרחוני" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">04</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מהתובנה לבחירה עיצובית</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">מתוך המשפט "אין יותר אלגנטי מהטבע" נולד הרעיון המרכזי: להבה קטנה ועדינה שיושבת מעל השם "AVIRA" עצמו, כמו נר שרק הודלק. במקור הלוגו כלל גם מסגרת בוטנית עדינה סביב הכיתוב, אבל היא התעדנה בהדרגה עם השנים עד שנעלמה לגמרי — מה שנשאר היום הוא הליבה הכי נקייה של הרעיון: להבה אחת שקטה מעל טיפוגרפיה קלאסית, בלי שום קישוט מיותר סביבה.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">05</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה השתנה בדרך</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">לאורך השנים שעבדנו ביחד, גם התפקיד שלי מול עודד השתנה. בהתחלה הייתי פשוט מי שמבצעת את הגרפיקה. עם הזמן, ככל שהעסק גדל והתרחב למוצרים חדשים, הפכתי גם למי שעוזרת לו להבחין בין מה שנראה טוב לרגע לבין מה שבאמת בונה שפה עקבית לאורך זמן — לא כל רעיון חדש צריך להפוך למוצר, ולא כל טרנד מתאים למותג. זה שינה את האופי של העבודה בינינו, מ"תני לי עוד עיצוב" ל"תגידי לי מה נכון".</p>
+        </div>
+        <img src="images/web/avira-5.jpg" alt="פרחים מיובשים וטיפות שעווה על עץ" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/avira-6.jpg" alt="תקריב של הלוגו AVIRA על תווית הנר" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">06</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">התוצאה ואיך היא התקבלה</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">התוצאה הכי אמיתית שאני יכולה להצביע עליה היא לא מספר מכירות — היא הזמן עצמו. ארבע שנים של עבודה רציפה, על פני קטגוריות מוצר שונות (מדבקות, נרות, מפיצי ריח ועוד), עם לקוח שממשיך לבחור בי ובשיפוט המקצועי שלי גם כשיש לו סביבו קולות אחרים שמושכים אותו לכיוונים שונים. זה סוג של אמון שלא בונים בפרויקט בודד.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#473227;color:#f0efec;margin-top:clamp(72px,8vw,116px)">
+      <div style="max-width:960px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px)">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,3vw,44px);line-height:1.35;margin:0">אני לא רק פותרת בעיות עיצוב — אני עוזרת ללקוחות שלי להבחין בין רעש לבין מה שבאמת שלהם.</p>
+      </div>
+    </section>
+
+    <section style="background:#ddd2c1">
+      <div style="max-width:1280px;margin:0 auto;padding:56px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+        <div>
+          <div style="font-size:11px;letter-spacing:3px;color:#7c6146;margin-bottom:12px">הפרויקט הבא</div>
+          <div style="font-family:'TreeOfKnowledge',serif;font-size:32px">{{ next.title }}</div>
+        </div>
+        <a onClick="{{ goNext }}" style="cursor:pointer;display:inline-flex;align-items:center;gap:12px;background:#473227;color:#f0efec;padding:17px 30px;font-size:14px;letter-spacing:1.4px" style-hover="background:#33241c">מעבר לפרויקט <span style="color:#c7b49c">←</span></a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isHavaya }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="max-width:1280px;margin:0 auto;padding:48px clamp(18px,4vw,44px) 0">
+      <a onClick="{{ goHome }}" style="cursor:pointer;font-size:14px;color:#7c6650">← חזרה לעבודות</a>
+      <div style="font-size:11px;letter-spacing:3px;color:#a08869;margin:34px 0 18px">מיתוג · תכשיטים מיובאים מהודו</div>
+      <h1 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(38px,5vw,76px);line-height:1.02;margin:0">HAVAYA — תכשיטים מהמזרח</h1>
+      <p style="font-size:20px;line-height:1.8;color:#5a4234;max-width:31em;margin:26px 0 0">מיתוג לעסק תכשיטים מיובאים מהודו</p>
+      <div style="display:flex;flex-wrap:wrap;gap:18px 44px;margin:40px 0 0;padding:24px 0;border-top:1px solid #ddd2c1;border-bottom:1px solid #ddd2c1;font-size:15px;color:#6b5240">
+        <span>אסף בוטביקה</span>
+        <span>תכשיטים · מנדלות</span>
+        <span>מערכת זהות מלאה</span>
+        <span>לוגו · כרטיס ביקור · באנרים</span>
+      </div>
+    </section>
+
+    <section style="padding:44px 0 0">
+      <img src="images/web/havaya-1.jpg" alt="תליון מנדלה מוזהב על שולחן עץ לצד בד מודפס ופרחים מיובשים" style="width:100%;height:min(62vh,620px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">את אסף הכרתי דרך חברה משותפת שהייתה אז סטודנטית לשיווק דיגיטלי, ומחפשת לקוח לבנות עליו תיק עבודות משלה. כששמעה שאסף זקוק גם למיתוג, היא צירפה אותי לפרויקט. הבריף היה לבנות לוגו לעסק תכשיטים שמייבא מוצרים מהודו לישראל, בשם חוויה — HAVAYA, שישדר את החיבור בין שתי התרבויות ויתאים לתכשיטים המעוצבים כמנדלות שהעסק מוכר.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">לפעמים תהליך המיתוג עצמו הוא מה שחושף את הצורך האמיתי, לא הבריף הראשוני. כך היה גם אצל אסף: הבריף המקורי דיבר על חיבור בין שתי תרבויות, אבל ככל שהתקדמנו בסקיצות, אסף התחיל לדייק את עצמו ואת מה שהוא באמת מחפש — סמלים קונקרטיים כמו אינסוף ולוטוס שדיברו אליו הרבה יותר מכל רעיון מופשט. זה בדיוק התפקיד של תהליך עיצוב טוב: לא רק לבצע את הבריף כלשונו, אלא לתת ללקוח את המרחב לגלות תוך כדי העבודה מה הוא באמת רוצה. מהחיבור הבין-תרבותי המקורי נשארה הצבעוניות — כל הפלטה של הלוגו שאובה מעולם הצבעים ההודי.</p>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,5vw,72px) 0 0">
+      <img src="images/web/havaya-2.jpg" alt="כרטיסי ביקור של HAVAYA על בד פשתן" style="width:100%;height:min(58vh,560px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%);width:980px;height:980px;pointer-events:none;opacity:0.5">
+        <div style="position:absolute;inset:0;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:100px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:200px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:290px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:370px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:440px;border:1px solid #ddd2c1;border-radius:50%"></div>
+      </div>
+      <div style="position:relative;max-width:900px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px);text-align:center">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,3.2vw,46px);line-height:1.32;margin:0">״אני מרגיש לא בנוח להגיד לך שאני לא אוהב את מה שעיצבת, כי אני מרגיש שאני פוגע באמנות שלך.״</p>
+        <div style="font-size:13px;letter-spacing:2px;color:#a08869;margin-top:26px">המשפט ששינה את העבודה בינינו</div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,44px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">03</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">הרגע שבו התחברתי</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">התהליך עם אסף היה ארוך — הייתי אז לגמרי ג'וניורית, והסקיצות הראשונות שהצגתי לא היו טובות. הרגע שבאמת חיבר בינינו לא היה עיצובי אלא אנושי: אסף אמר לי פעם, בזהירות רבה, "אני מרגיש לא בנוח להגיד לך שאני לא אוהב את מה שעיצבת, כי אני מרגיש שאני פוגע באמנות שלך". עניתי לו: "החומרים שאני מעצבת הם שלך. אתה חייב לדייק אותי ולכוון אותי, ולהגיד לי באופן הכי ישיר מה אתה לא אוהב, כדי שאוכל להביא אותך לידי ביטוי — כך שהחומרים שאני מעצבת יתאימו לך ולעסק שלך". מהרגע ההוא מערכת היחסים המקצועית שלנו הפכה הרבה יותר זורמת ונעימה. זה הרגע שבו הבנתי משהו על עצמי כמעצבת — שהתפקיד שלי הוא לשרת את הקול שלהם, לא את שלי.</p>
+        </div>
+        <div>
+          <img src="images/web/havaya-3.jpg" alt="אתר HAVAYA על מסך מחשב נייד" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" />
+          <div style="height:3px;margin-top:14px;background:repeating-linear-gradient(90deg,#ddd2c1 0 9px,transparent 9px 14px,#e4dccf 14px 26px,transparent 26px 33px)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/havaya-4.jpg" alt="טלפון נייד מציג באנרי קטגוריות טבעות וצמידים של HAVAYA, מונח על בד פשתן" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">04</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מהתובנה לבחירה עיצובית</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">הלוגו הסופי נבנה סביב שני סמלים קונקרטיים שאסף ביקש: פרח לוטוס (טוהר ויופי בתרבות ההודית) וסמל אינסוף (המשכיות). מסביבם הוספתי דוגמת מנדלה עדינה, בהשראת שפת העיצוב העשירה של התרבות ההודית — קווים גיאומטריים חוזרים ותבניות סימטריות שמאפיינות אותה. גם הצבעוניות כולה נבחרה מתוך עולם הצבעים ההודי.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">05</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה השתנה בדרך</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">בדרך לגרסה הסופית נפסלו הרבה סקיצות. השינוי המרכזי לא היה רק ויזואלי אלא תקשורתי: ברגע שאסף התחיל לתת לי משוב ישיר וברור (בעקבות השיחה שתיארתי למעלה), הסקיצות התקרבו הרבה יותר מהר למה שהוא באמת חיפש. הגרסה שנבחרה בסוף הייתה מדויקת בשבילו — לא רק יפה, אלא נכונה.</p>
+        </div>
+        <img src="images/web/havaya-5.jpg" alt="מנדלה מוטבעת בזהב על נייר, עם עלי כותרת מיובשים" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/havaya-6.jpg" alt="תקריב של סמל HAVAYA מוטבע בנייר" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">06</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">התוצאה ואיך היא התקבלה</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0 0 18px">אחרי שסגרנו את הלוגו, הצבעים והפונטים, המשכתי לייצר עבור אסף את שאר מערכת הזהות — כרטיס ביקור ובאנרים לאתר שהוא בנה באותה תקופה. זו לא נשארה עבודת לוגו בודדת, אלא הפכה למערכת עיצובית מלאה שליוותה את העסק בכל נקודת מגע — התוצאה הישירה של כך שהסקיצה שנבחרה הייתה מדויקת בשביל אסף, לא רק יפה.</p>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">אחרי שסיימנו את הלוגו, אסף אמר לי בהתלהבות שהוא כל כך אוהב את מה שיצא, שהוא לא מצליח להפסיק להסתכל עליו.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%);width:980px;height:980px;pointer-events:none;opacity:0.5">
+        <div style="position:absolute;inset:0;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:100px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:200px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:290px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:370px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:440px;border:1px solid #ddd2c1;border-radius:50%"></div>
+      </div>
+      <div style="position:relative;max-width:900px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px);text-align:center">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,3.2vw,46px);line-height:1.32;margin:0">״מרגיש איתך הכי כיף בעולם, תודה.״</p>
+        <div style="font-size:13px;letter-spacing:2px;color:#a08869;margin-top:26px">אסף · HAVAYA</div>
+      </div>
+    </section>
+
+    <section style="background:#473227;color:#f0efec;margin-top:clamp(72px,8vw,116px)">
+      <div style="max-width:960px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px)">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,3vw,44px);line-height:1.35;margin:0">גיליתי שהתפקיד שלי הוא לא להגן על העיצוב שלי, אלא להזמין את הלקוח לומר בדיוק מה לא עובד בשבילו — כי משם נולדת העבודה שבאמת מתאימה לו.</p>
+      </div>
+    </section>
+
+    <section style="background:#ddd2c1">
+      <div style="max-width:1280px;margin:0 auto;padding:56px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+        <div>
+          <div style="font-size:11px;letter-spacing:3px;color:#7c6146;margin-bottom:12px">הפרויקט הבא</div>
+          <div style="font-family:'TreeOfKnowledge',serif;font-size:32px">{{ next.title }}</div>
+        </div>
+        <a onClick="{{ goNext }}" style="cursor:pointer;display:inline-flex;align-items:center;gap:12px;background:#473227;color:#f0efec;padding:17px 30px;font-size:14px;letter-spacing:1.4px" style-hover="background:#33241c">מעבר לפרויקט <span style="color:#c7b49c">←</span></a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isTamranim }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="max-width:1280px;margin:0 auto;padding:48px clamp(18px,4vw,44px) 0">
+      <a onClick="{{ goHome }}" style="cursor:pointer;font-size:14px;color:#7c6650">← חזרה לעבודות</a>
+      <div style="font-size:11px;letter-spacing:3px;color:#a08869;margin:34px 0 18px">מיתוג · מטע תמרים משפחתי</div>
+      <h1 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(38px,5vw,76px);line-height:1.02;margin:0">התמרנים</h1>
+      <p style="font-size:20px;line-height:1.8;color:#5a4234;max-width:31em;margin:26px 0 0">מיתוג למטע תמרים משפחתי בבקעת הירדן</p>
+      <div style="display:flex;flex-wrap:wrap;gap:18px 44px;margin:40px 0 0;padding:24px 0;border-top:1px solid #ddd2c1;border-bottom:1px solid #ddd2c1;font-size:15px;color:#6b5240">
+        <span>הדר וגל</span>
+        <span>בקעת הירדן</span>
+        <span>מערכת זהות מלאה</span>
+        <span>לוגו · אתר · אריזות · קופי</span>
+      </div>
+    </section>
+
+    <section style="padding:44px 0 0">
+      <img src="images/web/tamranim-1.jpg" alt="שדרת עצי תמר בבקעת הירדן באור שקיעה" style="width:100%;height:min(62vh,620px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">התמרנים הם לא לקוח רגיל — הדר היא אמא שלי, וגל הוא אחי. מהרגע שהם התחילו להקים את המטע, שאלתי אותם אם הם רוצים שאמתג את העסק עבורם. שלחתי לאמא שלי את שאלון המיתוג הרגיל שאני שולחת לכל לקוח — אבל מהר מאוד הבנתי שזה לא יעבוד ככה הפעם.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+        <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
+        <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
+        <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">מתחת לכל הנתונים העסקיים (איכות התמרים, הטכנולוגיה, הערכים) עמד סיפור אישי עמוק בהרבה: לאמא שלי היה קשר לתמרים כל החיים — ״בילדות היו לנו בגינה 16 עצי תמר שאבא שלי ז"ל טיפח בידע שמסקרן אותי עד היום. ההיכרות המקצועית הראשונה שלי עם עולם התמרים הייתה בתקופה קשה — על סף גירושים, עם שני ילדים קטנים בבית — כשהתחלתי לעבוד כמזכירת מנכ"ל בבית אריזה בבקעת הירדן. הגעתי בלי שום ידע, נאלצתי ללמוד הכל לבד, ופיתחתי קשר עמוק עם המגדלים שלימדו אותי הכל. תהליך המיון של תמרים נמשך כמעט חצי שנה, והתוצאה הייתה תמרים שנמכרו במחירים גבוהים — "כמו זהב". החיבור הזה עם המגדלים ועם העולם הזה הוא מה שגרם לי להבין שזה מה שאני רוצה לעשות בעצמי, ומאז פעלתי להגשים את החלום.״</p>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,5vw,72px) 0 0">
+      <img src="images/web/tamranim-2.jpg" alt="כרטיסי ביקור של התמרנים על משטח עץ לצד תמרים" style="width:100%;height:min(48vh,440px);object-fit:cover;display:block" />
+    </section>
+
+    <section style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%);width:980px;height:980px;pointer-events:none;opacity:0.5">
+        <div style="position:absolute;inset:0;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:100px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:200px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:290px;border:1px solid #ddd2c1;border-radius:50%"></div>
+        <div style="position:absolute;inset:370px;border:1px solid #e0d6c6;border-radius:50%"></div>
+        <div style="position:absolute;inset:440px;border:1px solid #ddd2c1;border-radius:50%"></div>
+      </div>
+      <div style="position:relative;max-width:880px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px);text-align:center">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(28px,3.4vw,50px);line-height:1.3;margin:0">במקום למלא טופס, ישבנו ערב אחד על כוס קפה — והם סיפרו.</p>
+        <div style="font-size:13px;letter-spacing:2px;color:#a08869;margin-top:26px">הרגע שבו הבנתי שהמיתוג הזה חייב להיות אחר</div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,44px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">03</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">הרגע שבו התחברתי</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">בפרויקט הזה, לא היה אפשר להשתמש בשאלון הרגיל שלי כמו שהוא. בנסיעה משפחתית לחו"ל לקחתי איתי את המחשב, וישבנו ערב אחד יחד על כוס קפה — במקום למלא טופס, שאלתי שאלות מכוונות והם סיפרו סיפורים מרגשים שכתבתי במחשב תוך כדי השיחה. זה היה הרגע שבו הבנתי שהמיתוג הזה חייב להיות אחר, כי גם התהליך של איסוף החומר היה אחר. לא עם כל לקוח אני יכולה לשבת ערב שלם על כוס קפה ולשמוע את הסיפור המלא — אבל כשזה קרה, זה שינה לי את ההבנה לגבי החשיבות הגדולה שיש לשאלון מיתוג טוב.</p>
+        </div>
+        <div>
+          <img src="images/web/tamranim-3.jpg" alt="אתר התמרנים על מסך מקבוק, מונח על בד פשתן לצד קערת תמרים" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" />
+          <div style="height:3px;margin-top:14px;background:repeating-linear-gradient(90deg,#ddd2c1 0 9px,transparent 9px 14px,#e4dccf 14px 26px,transparent 26px 33px)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/tamranim-4.jpg" alt="שלוש אריזות תמרים של התמרנים — בלאדי, טבעי ועסיסי — בתוך ארגז עץ" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">04</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מהתובנה לבחירה עיצובית</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">הבנתי שהבידול שלהם לא יכול להיות רק "תמרים איכותיים מהבקעה" — יש שם עוד עשרות מגדלים. הוא היה צריך להיות במקום אחר: תחושה של חקלאות צעירה וטכנולוגית, בלי לאבד את החיבור לאדמה ולשורשים. זה הוביל להחלטה שהם ביקשו במפורש — לוותר על הצבעים ששולטים בענף התמרים (שחור, זהב, ירוק, אדום) ולבחור בפלטה חמה ורכה יותר שמרגישה עדכנית ורעננה בלי לצעוק. גם בלוגו עצמו, הפונט העבה עם הפינות החדות והמעוגלות גם יחד משדר את שני הצדדים: החיספוס והדיוק של חקלאות מקצועית, לצד הפשטות והחן של עבודת אדמה.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">05</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה השתנה בדרך</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">תהליך המיתוג עצמו לא ארך הרבה זמן — הלוגו הגיע די בקלות, והצבעים והפונטים עברו אולי סבב תיקונים אחד. את האתר הם אהבו ממבט ראשון. המקום שבו היו באמת חילוקי דעות היה האריזות: מכיוון שהם מוכרים בעיקר דרך מכירות מרוכזות ליישובים, היה קריטי שהשליח שמחלק את המשלוחים לא יתבלבל בין רמות האיכות השונות של התמר — שנמכרות באריזות שונות ובמחירים שונים. חלק מהפתרון היה גם שיווקי: הפרקציה שנקראת בענף "משולפח" (שם לא מושך בעליל) הפכה ל"בלאדי", לצד "עסיסי" ו"טבעי" לשתי הפרקציות האחרות — שמות שהומצאו לגמרי בפרויקט הזה ואין להם מקבילה בשום מקום אחר בענף.</p>
+        </div>
+        <img src="images/web/tamranim-5.jpg" alt="אשכול תמרים על העץ באור שקיעה" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" />
+      </div>
+    </section>
+
+    <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(18px,4vw,44px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <img src="images/web/tamranim-6.jpg" alt="תקריב של הלוגו התמרנים על אריזה ירוקה" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" />
+        <div>
+          <div style="display:flex;align-items:baseline;gap:22px;margin-bottom:22px">
+            <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">06</span>
+            <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">התוצאה ואיך היא התקבלה</h2>
+          </div>
+          <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">התוצאה כוללת מערכת שלמה: לוגו, פלטה, אתר שאהבו ממבט ראשון, ומערכת אריזות עם שמות פרקציה ייחודיים שאין להם מקבילה בענף התמרים בישראל. הקופי — באתר ובאריזות כאחד — מוקפד עד המילה האחרונה: כל אריזה נותנת סיבה קונקרטית להתאהב מחדש בתמרים, לא רק "תמר איכותי". זו לא רק עבודת מיתוג — זו שפה שלמה שהמשפחה שלי משתמשת בה היום כדי למכור את מה שהם בנו.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#473227;color:#f0efec;margin-top:clamp(72px,8vw,116px)">
+      <div style="max-width:960px;margin:0 auto;padding:clamp(72px,8vw,116px) clamp(18px,4vw,44px)">
+        <p style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,3vw,44px);line-height:1.35;margin:0">הבידול האמיתי אף פעם לא נמצא במוצר עצמו — הוא נמצא באנשים ובסיפורים שמאחורי המוצר.</p>
+      </div>
+    </section>
+
+    <section style="background:#ddd2c1">
+      <div style="max-width:1280px;margin:0 auto;padding:56px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+        <div>
+          <div style="font-size:11px;letter-spacing:3px;color:#7c6146;margin-bottom:12px">הפרויקט הבא</div>
+          <div style="font-family:'TreeOfKnowledge',serif;font-size:32px">{{ next.title }}</div>
+        </div>
+        <a onClick="{{ goNext }}" style="cursor:pointer;display:inline-flex;align-items:center;gap:12px;background:#473227;color:#f0efec;padding:17px 30px;font-size:14px;letter-spacing:1.4px" style-hover="background:#33241c">מעבר לפרויקט <span style="color:#c7b49c">←</span></a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="background:#473227;color:#c7b49c">
+    <div style="max-width:1280px;margin:0 auto;padding:36px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;font-size:13px">
+      <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;color:#f0efec">מעיין זקן · מיתוג ועיצוב</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;},&quot;showJobsBlock&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;}}">
+class Component extends DCLogic {
+  state = { view: 'home', idx: 0, sent: false, qi: 0, formMsg: '' };
+
+  // ציטוטים — כדי להוסיף ציטוט, מוסיפים שורה לרשימה
+  quotes() {
+    return [
+      { text: 'אני מאוד מבסוט על העבודה שלך.', who: 'עודד חייק · אווירה AVIRA' },
+      { text: 'מרגיש איתך הכי כיף בעולם, תודה.', who: 'אסף · HAVAYA' },
+      { text: 'זה בדיוק הפתרון שהיינו צריכים.', who: 'עודד חייק · אווירה AVIRA' }
+    ];
+  }
+
+  data() {
+    return [
+      { title: 'AVIRA · אווירה', kind: 'מיתוג · נרות ריחניים', place: 'עודד חייק', date: 'עבודה מתמשכת', scope: 'לוגו · תוויות · אריזות', shot: 'צילום פרויקט 01', line: 'מוצר אחד שהפך למותג, ולקוח אחד שנשאר איתי כבר ארבע שנים.' },
+      { title: 'HAVAYA · חוויה', kind: 'מיתוג · תכשיטים', place: 'אסף בוטביקה', date: 'מערכת זהות מלאה', scope: 'לוגו · כרטיס ביקור · באנרים', shot: 'צילום פרויקט 02', line: 'איך מסמנים מפגש בין שתי תרבויות בלי להטות אותו לצד אחד.' },
+      { title: 'התמרנים', kind: 'מיתוג · מטע תמרים משפחתי', place: 'בקעת הירדן', date: 'מערכת זהות מלאה', scope: 'לוגו · אתר · אריזות · קופי', shot: 'צילום פרויקט 03', line: 'מטע תמרים משפחתי — והבידול לא היה בתמר עצמו.' }
+    ];
+  }
+
+  open(i) {
+    this.setState({ view: 'project', idx: i });
+    window.scrollTo({ top: 0 });
+  }
+
+  renderVals() {
+    const items = this.data();
+    const qs = this.quotes();
+    const qi = this.state.qi % qs.length;
+    const dotBase = 'width:7px;height:7px;box-sizing:border-box;border-radius:50%;display:block;border:1px solid #ab9179;';
+    return {
+      formMsg: this.state.formMsg,
+      quote: qs[qi],
+      hasManyQuotes: qs.length > 1,
+      quoteDots: qs.map((q, i) => ({ active: i === qi, label: 'ציטוט ' + (i + 1), style: dotBase + (i === qi ? 'background:#ab9179' : 'background:transparent'), pick: () => this.setState({ qi: i }) })),
+      next: items[(this.state.idx + 1) % items.length],
+      openAvira: () => this.open(0),
+      openHavaya: () => this.open(1),
+      openTamranim: () => this.open(2),
+      isHome: this.state.view === 'home',
+      isAvira: this.state.view === 'project' && this.state.idx === 0,
+      isHavaya: this.state.view === 'project' && this.state.idx === 1,
+      isTamranim: this.state.view === 'project' && this.state.idx === 2,
+      sent: this.state.sent,
+      showPricing: this.props.showPricing ?? true,
+      showTestimonials: this.props.showTestimonials ?? true,
+      showJobsBlock: this.props.showJobsBlock ?? false,
+      goHome: () => { this.setState({ view: 'home' }); },
+      goNext: () => this.open((this.state.idx + 1) % items.length),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const form = e.target;
+        if (location.protocol === 'file:' || /claude|anthropic|localhost|127\.0\.0\.1/.test(location.hostname)) { this.setState({ sent: true, formMsg: 'תודה! (בתצוגה המקדימה הטופס לא נשלח. באתר החי הפנייה תגיע אלייך במייל.)' }); return; }
+        const body = new URLSearchParams(new FormData(form)).toString();
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
+          .then((r) => { if (!r.ok) throw new Error(r.status); form.reset(); this.setState({ sent: true, formMsg: 'תודה! הפנייה התקבלה, ואחזור אלייך בהקדם.' }); })
+          .catch(() => this.setState({ sent: true, formMsg: 'משהו לא עבד בשליחה. אפשר לכתוב לי ישירות: maayanzaken51@gmail.com' }));
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

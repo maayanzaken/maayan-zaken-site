@@ -43,6 +43,7 @@ a:hover{color:#8a6f57}
 .who-list>li{padding-top:0!important}
 .who-list>li{border-inline-start:1px solid #b9a68c!important;padding-inline:16px 0!important}
 .cta-wrap{text-align:center;justify-content:center;line-height:1.5}
+.works-hint{display:none}
 }
 .contact-form input:-webkit-autofill,.contact-form input:-webkit-autofill:hover,.contact-form input:-webkit-autofill:focus{-webkit-text-fill-color:#f0efec;-webkit-box-shadow:0 0 0 1000px #473227 inset;caret-color:#f0efec;transition:background-color 9999s}
 .budget-select:has(option[value='']:checked){color:#8a6f57 !important;font-size:14px !important}
@@ -147,10 +148,10 @@ a:hover{color:#8a6f57}
             <div style="font-size:12px;line-height:1;letter-spacing:0.14em;color:#a08869;margin-bottom:19px">עבודות נבחרות</div>
             <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:400;font-size:clamp(30px,2.75vw,35px);line-height:1.05;margin:0;max-width:334px">כל אחד מהם התחיל בשיחה.</h2>
           </div>
-          <span style="font-size:12px;line-height:1;color:#a08869">לחצו לצפייה בפרויקט</span>
+          <span class="works-hint" style="font-size:12px;line-height:1;color:#a08869">לחצו לצפייה בפרויקט</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px 36px">
-          <a onClick="{{ openAvira }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+          <a href="#top" onClick="{{ openAvira }}" style="cursor:pointer;display:block;min-width:0;color:#473227" style-hover="opacity:0.9">
             <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
               <img src="images/web/avira-1.jpg" alt="נר אווירה על שולחן עץ" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" />
             </div>
@@ -158,8 +159,9 @@ a:hover{color:#8a6f57}
               <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">אווירה</span>
               <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - לייף סטייל</span>
             </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;letter-spacing:0.05em;color:#473227;border-bottom:1px solid #ab9179;padding-bottom:3px">לצפייה בפרויקט <span aria-hidden="true" style="color:#ab9179">←</span></span>
           </a>
-          <a onClick="{{ openHavaya }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+          <a href="#top" onClick="{{ openHavaya }}" style="cursor:pointer;display:block;min-width:0;color:#473227" style-hover="opacity:0.9">
             <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
               <img src="images/web/havaya-1.jpg" alt="תליון מנדלה מוזהב של חוויה על שולחן עץ" style="width:100%;height:100%;object-fit:cover;object-position:47% 50%;display:block" />
             </div>
@@ -167,8 +169,9 @@ a:hover{color:#8a6f57}
               <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">חוויה</span>
               <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - לייף סטייל</span>
             </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;letter-spacing:0.05em;color:#473227;border-bottom:1px solid #ab9179;padding-bottom:3px">לצפייה בפרויקט <span aria-hidden="true" style="color:#ab9179">←</span></span>
           </a>
-          <a onClick="{{ openTamranim }}" style="cursor:pointer;display:block;min-width:0" style-hover="opacity:0.9">
+          <a href="#top" onClick="{{ openTamranim }}" style="cursor:pointer;display:block;min-width:0;color:#473227" style-hover="opacity:0.9">
             <div style="aspect-ratio:264/350;overflow:hidden;background:#ddd2c1">
               <img src="images/web/tamranim-1.jpg" alt="שדרת עצי תמר בבקעת הירדן באור שקיעה" style="width:100%;height:100%;object-fit:cover;object-position:50% 75%;display:block" />
             </div>
@@ -176,6 +179,7 @@ a:hover{color:#8a6f57}
               <span style="font-family:'TreeOfKnowledge',serif;font-size:20px;line-height:1.1">התמרנים</span>
               <span style="font-size:12px;line-height:1;color:#a08869">מיתוג - חקלאות</span>
             </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;letter-spacing:0.05em;color:#473227;border-bottom:1px solid #ab9179;padding-bottom:3px">לצפייה בפרויקט <span aria-hidden="true" style="color:#ab9179">←</span></span>
           </a>
         </div>
         <div aria-hidden="true" style="position:relative;height:0">

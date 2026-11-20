@@ -38,9 +38,8 @@ a:hover{color:#8a6f57}
 .mobile-nav{display:flex}
 .pj-row{grid-template-columns:auto minmax(0,1fr)!important;row-gap:14px!important}
 .pj-row>p,.pj-row>div{grid-column:1 / -1}
-.who-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:28px!important}
-.who-list>li:nth-child(odd){border-inline-start:0!important;padding-inline-start:0!important}
-.who-list>li:nth-child(even){border-inline-start:1px solid #b9a68c!important;padding-inline-start:16px!important}
+.who-list{grid-template-columns:repeat(2,max-content)!important;justify-content:center;column-gap:40px!important;row-gap:30px!important;width:100%;margin:4px auto 0!important}
+.who-list>li{border-inline-start:1px solid #b9a68c!important;padding-inline:16px 0!important}
 .cta-wrap{text-align:center;justify-content:center;line-height:1.5}
 }
 .contact-form input:-webkit-autofill,.contact-form input:-webkit-autofill:hover,.contact-form input:-webkit-autofill:focus{-webkit-text-fill-color:#f0efec;-webkit-box-shadow:0 0 0 1000px #473227 inset;caret-color:#f0efec;transition:background-color 9999s}

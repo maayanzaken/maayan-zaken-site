@@ -30,6 +30,19 @@ a:hover{color:#8a6f57}
 .who-text{flex:1 1 0;min-width:0;max-width:555px}
 .who-list{flex:1 1 0;min-width:0;max-width:544px}
 @media (max-width:760px){.who-row{flex-direction:column;gap:40px}.who-text,.who-list{max-width:none;width:100%}}
+.nav-menu-btn{display:none}
+.mobile-nav{display:none}
+@media (max-width:760px){
+.nav-links{display:none!important}
+.nav-menu-btn{display:inline-flex}
+.mobile-nav{display:flex}
+.pj-row{grid-template-columns:auto minmax(0,1fr)!important;row-gap:14px!important}
+.pj-row>p,.pj-row>div{grid-column:1 / -1}
+.who-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:28px!important}
+.who-list>li:nth-child(odd){border-inline-start:0!important;padding-inline-start:0!important}
+.who-list>li:nth-child(even){border-inline-start:1px solid #b9a68c!important;padding-inline-start:16px!important}
+.cta-wrap{text-align:center;justify-content:center;line-height:1.5}
+}
 .contact-form input:-webkit-autofill,.contact-form input:-webkit-autofill:hover,.contact-form input:-webkit-autofill:focus{-webkit-text-fill-color:#f0efec;-webkit-box-shadow:0 0 0 1000px #473227 inset;caret-color:#f0efec;transition:background-color 9999s}
 .budget-select:has(option[value='']:checked){color:#8a6f57 !important;font-size:14px !important}
 .contact-row{display:flex;justify-content:space-between;align-items:flex-start;gap:48px}
@@ -50,13 +63,23 @@ a:hover{color:#8a6f57}
         <img src="images/logo.svg" alt="מעיין זקן" width="98" height="48" style="display:block;width:98px;height:48px" />
         <span style="font-size:14px;line-height:1;color:#ab9179;padding-top:6px">מיתוג ועיצוב</span>
       </a>
-      <nav style="display:flex;align-items:center;flex-wrap:wrap;gap:12px 21px;font-size:14px;line-height:1">
+      <nav class="nav-links" style="display:flex;align-items:center;flex-wrap:wrap;gap:12px 21px;font-size:14px;line-height:1">
         <a href="#works" onClick="{{ goHome }}">עבודות</a>
         <a href="#who" onClick="{{ goHome }}">עם מי אני עובדת</a>
         <a href="#how" onClick="{{ goHome }}">במה אני הכי טובה</a>
         <a href="#about" onClick="{{ goHome }}">עלי</a>
-        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:34px;border:1px solid #473227;padding:0 16px;margin-inline-start:5px;font-size:14px" style-hover="background:#473227;color:#f0efec">שניפגש לקפה? <span aria-hidden="true" style="color:#ab9179">←</span></a>
+        <a href="#contact" onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:34px;border:1px solid #473227;padding:0 16px;margin-inline-start:5px;font-size:14px" style-hover="background:#473227;color:#f0efec">שניפגש לקפה? <span aria-hidden="true" style="color:#ab9179">←</span></a>
       </nav>
+      <button type="button" class="nav-menu-btn" onClick="{{ toggleMenu }}" aria-label="תפריט" aria-expanded="{{ menuOpen }}" style="flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 12px;background:none;border:1px solid #473227;cursor:pointer"><span style="display:block;width:20px;height:1.5px;background:#473227"></span><span style="display:block;width:20px;height:1.5px;background:#473227"></span><span style="display:block;width:20px;height:1.5px;background:#473227"></span></button>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <nav class="mobile-nav" style="flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 10px;font-size:17px">
+          <a href="#works" onClick="{{ navTo }}" style="padding:13px 0;border-top:1px solid #ddd2c1">עבודות</a>
+          <a href="#who" onClick="{{ navTo }}" style="padding:13px 0;border-top:1px solid #ddd2c1">עם מי אני עובדת</a>
+          <a href="#how" onClick="{{ navTo }}" style="padding:13px 0;border-top:1px solid #ddd2c1">במה אני הכי טובה</a>
+          <a href="#about" onClick="{{ navTo }}" style="padding:13px 0;border-top:1px solid #ddd2c1">עלי</a>
+          <a href="#contact" onClick="{{ navTo }}" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;height:47px;background:#473227;color:#f0efec">שניפגש לקפה? <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
+        </nav>
+      </sc-if>
     </div>
   </header>
 
@@ -273,7 +296,7 @@ a:hover{color:#8a6f57}
           </li>
         </ul>
         <div style="text-align:center;margin-top:40px">
-          <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;box-sizing:border-box;min-height:47px;background:#473227;color:#f0efec;padding:12px 27px 12px 35px;font-size:13px;letter-spacing:0.05em" style-hover="background:#33241c">לא בטוחה מה מתאים? קבלי הצעת מחיר תוך 3 ימי עסקים <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
+          <a href="#contact" class="cta-wrap" style="display:inline-flex;align-items:center;gap:8px;box-sizing:border-box;min-height:47px;background:#473227;color:#f0efec;padding:12px 27px 12px 35px;font-size:13px;letter-spacing:0.05em" style-hover="background:#33241c">לא בטוחה מה מתאים? קבלי הצעת מחיר תוך 3 ימי עסקים <span aria-hidden="true" style="color:#e6ddd1">←</span></a>
         </div>
       </div>
     </section>
@@ -288,7 +311,7 @@ a:hover{color:#8a6f57}
           <div style="display:flex;flex-direction:column;font-weight:700;font-size:15px;line-height:25px">
             <a href="tel:+972509009610" style="color:#473227;text-decoration:none;direction:ltr;align-self:flex-start" style-hover="color:#8a6f57">050-9009610</a>
             <a href="mailto:maayanzaken51@gmail.com" style="color:#473227;text-decoration:none;align-self:flex-start" style-hover="color:#8a6f57">maayanzaken51@gmail.com</a>
-            <span style="margin-top:8px">אינסטגרם: <a href="https://instagram.com/maayanzaken" target="_blank" rel="noopener" style="color:#473227;text-decoration:none" style-hover="color:#8a6f57">@maayanzaken</a></span>
+            <span style="margin-top:8px">אינסטגרם: <a href="https://instagram.com/maayanzaken" target="_blank" rel="noopener" dir="ltr" style="color:#473227;text-decoration:none;unicode-bidi:isolate" style-hover="color:#8a6f57">@maayanzaken</a></span>
           </div>
         </div>
         <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit="{{ onSubmit }}" style="position:relative;background:#473227;box-sizing:border-box;padding:33px 30px 35px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:20px">
@@ -385,7 +408,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">עודד פנה אליי עם מוצר קונקרטי אבל שאפתני: נר ריחני בצנצנת, שהוא רוצה להפוך למותג בשם "אווירה". הבריף הרשמי דיבר בשפה עסקית ברורה — יעדי מכירות מדורגים, קהל יעד בגילאי 16–50 (בעיקר נשים), אסטרטגיית שיווק ברשתות חברתיות. אבל כבר בשיחה הראשונה היה ברור שהמוצר הזה לא נועד רק להימכר — הוא נועד ליצור הרגשה.</p>
@@ -393,7 +416,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">מתחת לכל השפה העסקית — ניתוח מתחרים, יעדי רווח, פילוח קהלים — הייתה שורה אחת שבאמת כיוונה הכל: "אין יותר אלגנטי מהטבע". עודד רצה שהלוגו ישדר תחכום, עוצמה וסקס אפיל, אבל גם ובעיקר — תחושה טבעית. לצד זה עמדה תובנה נוספת: המוצר עצמו עתיק (נר הוא כלי בן 5,000 שנה), אבל הוא רצה שהמיתוג ירגיש רענן ומודרני, לא מונוכרומטי כמו החברות הגדולות בשוק. הניגוד הזה — בין עתיק לרענן, בין טבעי לתחכום — הוא מה שבאמת כיוון את הפרויקט, לא רשימת התכונות הרשמית.</p>
@@ -512,7 +535,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">את אסף הכרתי דרך חברה משותפת שהייתה אז סטודנטית לשיווק דיגיטלי, ומחפשת לקוח לבנות עליו תיק עבודות משלה. כששמעה שאסף זקוק גם למיתוג, היא צירפה אותי לפרויקט. הבריף היה לבנות לוגו לעסק תכשיטים שמייבא מוצרים מהודו לישראל, בשם חוויה — HAVAYA, שישדר את החיבור בין שתי התרבויות ויתאים לתכשיטים המעוצבים כמנדלות שהעסק מוכר.</p>
@@ -520,7 +543,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">לפעמים תהליך המיתוג עצמו הוא מה שחושף את הצורך האמיתי, לא הבריף הראשוני. כך היה גם אצל אסף: הבריף המקורי דיבר על חיבור בין שתי תרבויות, אבל ככל שהתקדמנו בסקיצות, אסף התחיל לדייק את עצמו ואת מה שהוא באמת מחפש — סמלים קונקרטיים כמו אינסוף ולוטוס שדיברו אליו הרבה יותר מכל רעיון מופשט. זה בדיוק התפקיד של תהליך עיצוב טוב: לא רק לבצע את הבריף כלשונו, אלא לתת ללקוח את המרחב לגלות תוך כדי העבודה מה הוא באמת רוצה. מהחיבור הבין-תרבותי המקורי נשארה הצבעוניות — כל הפלטה של הלוגו שאובה מעולם הצבעים ההודי.</p>
@@ -655,7 +678,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start;padding-bottom:56px;border-bottom:1px solid #ddd2c1">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">01</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">נקודת ההתחלה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">התמרנים הם לא לקוח רגיל — הדר היא אמא שלי, וגל הוא אחי. מהרגע שהם התחילו להקים את המטע, שאלתי אותם אם הם רוצים שאמתג את העסק עבורם. שלחתי לאמא שלי את שאלון המיתוג הרגיל שאני שולחת לכל לקוח — אבל מהר מאוד הבנתי שזה לא יעבוד ככה הפעם.</p>
@@ -663,7 +686,7 @@ a:hover{color:#8a6f57}
     </section>
 
     <section style="max-width:1280px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(18px,4vw,44px) 0">
-      <div style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
+      <div class="pj-row" style="display:grid;grid-template-columns:clamp(40px,7vw,110px) repeat(auto-fit,minmax(240px,1fr));gap:18px 40px;align-items:start">
         <span style="font-family:'TreeOfKnowledge',serif;font-size:32px;color:#c7b49c;line-height:1">02</span>
         <h2 style="font-family:'TreeOfKnowledge',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.15;margin:0">מה שבאמת עלה בשיחה</h2>
         <p style="font-size:17px;line-height:1.9;color:#5a4234;margin:0">מתחת לכל הנתונים העסקיים (איכות התמרים, הטכנולוגיה, הערכים) עמד סיפור אישי עמוק בהרבה: לאמא שלי היה קשר לתמרים כל החיים — ״בילדות היו לנו בגינה 16 עצי תמר שאבא שלי ז"ל טיפח בידע שמסקרן אותי עד היום. ההיכרות המקצועית הראשונה שלי עם עולם התמרים הייתה בתקופה קשה — על סף גירושים, עם שני ילדים קטנים בבית — כשהתחלתי לעבוד כמזכירת מנכ"ל בבית אריזה בבקעת הירדן. הגעתי בלי שום ידע, נאלצתי ללמוד הכל לבד, ופיתחתי קשר עמוק עם המגדלים שלימדו אותי הכל. תהליך המיון של תמרים נמשך כמעט חצי שנה, והתוצאה הייתה תמרים שנמכרו במחירים גבוהים — "כמו זהב". החיבור הזה עם המגדלים ועם העולם הזה הוא מה שגרם לי להבין שזה מה שאני רוצה לעשות בעצמי, ומאז פעלתי להגשים את החלום.״</p>
@@ -771,7 +794,7 @@ a:hover{color:#8a6f57}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;},&quot;showJobsBlock&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;מקטעים&quot;}}">
 class Component extends DCLogic {
-  state = { view: 'home', idx: 0, sent: false, qi: 0, formMsg: '', otherOpen: false };
+  state = { view: 'home', idx: 0, sent: false, qi: 0, formMsg: '', otherOpen: false, menuOpen: false };
 
   // ציטוטים — כדי להוסיף ציטוט, מוסיפים שורה לרשימה
   quotes() {
@@ -803,6 +826,9 @@ class Component extends DCLogic {
     return {
       formMsg: this.state.formMsg,
       otherOpen: this.state.otherOpen,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      navTo: () => this.setState({ view: 'home', menuOpen: false }),
       toggleOther: (e) => this.setState({ otherOpen: e.target.checked }),
       quote: qs[qi],
       hasManyQuotes: qs.length > 1,
